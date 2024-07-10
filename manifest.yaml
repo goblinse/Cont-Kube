@@ -1,21 +1,13 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: Service
 metadata:
-  name: nginx-deployment
-  labels:
-    app: nginx
+  name: cluster-ip-service
+  namespace: mine   
 spec:
-  replicas: 3
   selector:
-    matchLabels:
-      app: nginx
-  template:
-    metadata:
-      labels:
-        app: nginx
-    spec:
-      containers:
-      - name: nginx
-        image: nginx:1.14.2
-        ports:
-        - containerPort: 80
+	app: my-app  
+  ports:
+	- protocol: TCP
+  	port: 80
+  	targetPort: 8089
+
