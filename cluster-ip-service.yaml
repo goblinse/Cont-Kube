@@ -5,7 +5,7 @@ metadata:
   namespace: mine
 spec:
   selector:
-    app: my-app
+    app: hatoon-app
   ports:
     - protocol: TCP
       port: 80
