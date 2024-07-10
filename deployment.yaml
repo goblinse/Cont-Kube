@@ -1,17 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-app
+  name: hatoon-app
   namespace: mine
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: my-app
+      app: hatoon-app
   template:
     metadata:
       labels:
-        app: my-app
+        app: hatoon-app
     spec:
       containers:
       - name: my-app-container
